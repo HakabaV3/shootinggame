@@ -14,17 +14,27 @@ function Start() {
     }
 }
 
-function OnTriggerEnter (other : Collider) {
-	if (other.gameObject.tag == 'Boundary') {
-		return;
- 	}
-	
-	if (other.gameObject.tag == 'Player') {
-	    Instantiate(this.playerExprosion, other.transform.position , other.transform.rotation);
-	}
-	
-	this.gameController.AddScore(this.scoreValue); 
+function killSelf(score: int) {
     Instantiate(this.exprosion, this.transform.position, this.transform.rotation);
-	Destroy(other.gameObject);
 	Destroy(this.gameObject);
+	this.gameController.addScore(score);
+}
+
+function OnTriggerEnter (other : Collider) {
+	switch (other.gameObject.tag) {
+		case 'Boundary':
+			return;
+			break;
+			
+		case 'Player':
+			Destroy(other.gameObject); 
+		    Instantiate(this.playerExprosion, other.transform.position , other.transform.rotation);
+			this.killSelf(0);
+		    break;
+		
+		default:
+			Destroy(other.gameObject); 
+			this.killSelf(this.scoreValue);
+			break;
+	}
 }

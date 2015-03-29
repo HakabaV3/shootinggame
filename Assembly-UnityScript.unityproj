@@ -46,6 +46,7 @@
 	</Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\Scripts\BatteryController.js" />
      <Compile Include="Assets\Scripts\DestroyByBoundary.js" />
      <Compile Include="Assets\Scripts\DestroyByContact.js" />
      <Compile Include="Assets\Scripts\DestroyByTime.js" />
@@ -53,6 +54,9 @@
      <Compile Include="Assets\Scripts\Mover.js" />
      <Compile Include="Assets\Scripts\PlayerController.js" />
      <Compile Include="Assets\Scripts\RandomRotator.js" />
+     <None Include="Assets\Modular Space Raider\readme.txt" />
+     <None Include="Assets\Modular Space Raider\Shader\how_to_use.txt" />
+     <None Include="Assets\Modular Space Raider\Shader\Dynamic_Illum_Spec.shader" />
  <Reference Include="UnityEngine.UI">
  <HintPath>/Applications/Unity/Unity.app/Contents/UnityExtensions/Unity/GUISystem/4.6.3/UnityEngine.UI.dll</HintPath>
  </Reference>
